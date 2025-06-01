@@ -1,0 +1,26 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+coverage/
+
+# Environment variables
+.env
+.env*.local
+.env.*.local
+!/.env.example
+!/.env.production.example
+
+# Medplum monorepo clone
+medplum/
+
+# VisionFM folder
+VisionFM/
+
+# IDE and OS specific
+.vscode/
+.DS_Store
+*.swp 
