@@ -17,6 +17,10 @@ import {
   IconUser,
   IconUpload,
   IconReportAnalytics,
+  IconBuilding,
+  IconUsers,
+  IconActivity,
+  IconFileSearch,
 } from '@tabler/icons-react';
 import { JSX, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
@@ -47,6 +51,12 @@ import { ResourcePage } from './pages/resource/ResourcePage';
 import { TaskDetails } from './pages/tasks/TaskDetails';
 import { ImageUploadPage } from './pages/ImageUploadPage';
 import { AiAnalysisTab } from './pages/patient/AiAnalysisTab';
+import { ProjectManagementPage } from './pages/admin/ProjectManagementPage';
+import { UserManagementPage } from './pages/admin/UserManagementPage';
+import { SystemHealthPage } from './pages/admin/SystemHealthPage';
+import { AuditLogsPage } from './pages/admin/AuditLogsPage';
+import { SiteMetricsPage } from './pages/admin/SiteMetricsPage';
+import { AdminDashboard } from './pages/admin/AdminDashboard';
 
 export function App(): JSX.Element | null {
   const medplum = useMedplum();
@@ -82,7 +92,12 @@ export function App(): JSX.Element | null {
         {
           title: 'Admin',
           links: [
+            { icon: <IconActivity />, label: 'Admin Dashboard', href: '/admin' },
             { icon: <IconReportAnalytics />, label: 'Site Metrics', href: '/metrics' },
+            { icon: <IconBuilding />, label: 'Project Management', href: '/admin/projects' },
+            { icon: <IconUsers />, label: 'User Management', href: '/admin/users' },
+            { icon: <IconActivity />, label: 'System Health', href: '/admin/health' },
+            { icon: <IconFileSearch />, label: 'Audit Logs', href: '/admin/audit' },
           ],
         },
       ]}
@@ -166,6 +181,12 @@ export function App(): JSX.Element | null {
                 <Route path="edit" element={<ResourceEditPage />} />
                 <Route path="history" element={<ResourceHistoryPage />} />
               </Route>
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/metrics" element={<SiteMetricsPage />} />
+              <Route path="/admin/projects" element={<ProjectManagementPage />} />
+              <Route path="/admin/users" element={<UserManagementPage />} />
+              <Route path="/admin/health" element={<SystemHealthPage />} />
+              <Route path="/admin/audit" element={<AuditLogsPage />} />
             </>
           ) : (
             <>
