@@ -46,6 +46,7 @@ import { ResourceHistoryPage } from './pages/resource/ResourceHistoryPage';
 import { ResourcePage } from './pages/resource/ResourcePage';
 import { TaskDetails } from './pages/tasks/TaskDetails';
 import { ImageUploadPage } from './pages/ImageUploadPage';
+import { AiAnalysisTab } from './pages/patient/AiAnalysisTab';
 
 export function App(): JSX.Element | null {
   const medplum = useMedplum();
@@ -129,6 +130,7 @@ export function App(): JSX.Element | null {
                   <Route path="Task/:taskId" element={<TaskDetails />} />
                 </Route>
                 <Route path="edit" element={<EditTab />} />
+                <Route path="ai-analysis" element={<AiAnalysisTab />} />
                 <Route path="communication" element={<CommunicationTab />} />
                 <Route path="communication/:id" element={<CommunicationTab />} />
                 {hasDoseSpot && <Route path="dosespot" element={<DoseSpotTab />} />}
