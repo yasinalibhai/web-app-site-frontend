@@ -34,6 +34,7 @@ export function getPatientPageTabOrThrow(tabId: string): PatientPageTabInfo {
 export const PatientPageTabs: PatientPageTabInfo[] = [
   { id: 'timeline', url: '', label: 'Timeline' },
   { id: 'ai-analysis', url: 'ai-analysis', label: 'AI Analysis' },
+  { id: 'clinical-trials', url: 'clinical-trials', label: 'Clinical Trials' },
   { id: 'edit', url: 'edit', label: 'Edit' },
   {
     id: 'encounter',

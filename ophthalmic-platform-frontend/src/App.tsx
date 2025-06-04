@@ -51,12 +51,14 @@ import { ResourcePage } from './pages/resource/ResourcePage';
 import { TaskDetails } from './pages/tasks/TaskDetails';
 import { ImageUploadPage } from './pages/ImageUploadPage';
 import { AiAnalysisTab } from './pages/patient/AiAnalysisTab';
+import { ClinicalTrialsTab } from './pages/patient/ClinicalTrialsTab';
 import { ProjectManagementPage } from './pages/admin/ProjectManagementPage';
 import { UserManagementPage } from './pages/admin/UserManagementPage';
 import { SystemHealthPage } from './pages/admin/SystemHealthPage';
 import { AuditLogsPage } from './pages/admin/AuditLogsPage';
 import { SiteMetricsPage } from './pages/admin/SiteMetricsPage';
 import { AdminDashboard } from './pages/admin/AdminDashboard';
+import { ResearchStudyManagementPage } from './pages/admin/ResearchStudyManagementPage';
 
 export function App(): JSX.Element | null {
   const medplum = useMedplum();
@@ -98,6 +100,7 @@ export function App(): JSX.Element | null {
             { icon: <IconUsers />, label: 'User Management', href: '/admin/users' },
             { icon: <IconActivity />, label: 'System Health', href: '/admin/health' },
             { icon: <IconFileSearch />, label: 'Audit Logs', href: '/admin/audit' },
+            { icon: <IconClipboardCheck />, label: 'Research Studies', href: '/admin/research-studies' },
           ],
         },
       ]}
@@ -146,6 +149,7 @@ export function App(): JSX.Element | null {
                 </Route>
                 <Route path="edit" element={<EditTab />} />
                 <Route path="ai-analysis" element={<AiAnalysisTab />} />
+                <Route path="clinical-trials" element={<ClinicalTrialsTab />} />
                 <Route path="communication" element={<CommunicationTab />} />
                 <Route path="communication/:id" element={<CommunicationTab />} />
                 {hasDoseSpot && <Route path="dosespot" element={<DoseSpotTab />} />}
@@ -187,6 +191,7 @@ export function App(): JSX.Element | null {
               <Route path="/admin/users" element={<UserManagementPage />} />
               <Route path="/admin/health" element={<SystemHealthPage />} />
               <Route path="/admin/audit" element={<AuditLogsPage />} />
+              <Route path="/admin/research-studies" element={<ResearchStudyManagementPage />} />
             </>
           ) : (
             <>
